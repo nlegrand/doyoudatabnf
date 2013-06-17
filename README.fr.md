@@ -27,9 +27,9 @@ utilisateurs d'y accéder (de la même manière que tout le monde accède
 Installez Data BnF sur votre machine personnel
 ==============================================
 
-    $ git clone git://github.com/nlegrand/doyoudatabnf.git
-    $ cd doyoudatabnf
-    $ ./doyoudatabnf
+    git clone git://github.com/nlegrand/doyoudatabnf.git
+    cd doyoudatabnf
+    ./doyoudatabnf
 
 Vous pouvez avoir à attendre plus d'une demi-heure pour que l'import
 se fasse. Une fois terminé, vous pouvez le tester :
