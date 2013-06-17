@@ -1,0 +1,19 @@
+#!/bin/sh
+
+. doyoudatabnf.subr
+
+DUMPSDIR="databnf-2012-11-15"
+SETS="databnf_all_rdf_xml_2012-11-15.tar.gz databnf_externalrefs_xml_2012-11-15.tar.gz"
+BACKEND="databnf"
+
+cleandatabnfdumps $DUMPSDIR \
+&& mkdirdatabnfdumps $DUMPSDIR \
+&& getdatabnf $DUMPSDIR $SETS \
+&& extractdatabnf $DUMPSDIR $SETS \
+&& stopdatabnfbackend $BACKEND \
+&& cleandatabnfbackend $BACKEND \
+&& createdatabnfbackend $BACKEND \
+&& startdatabnfbackend $BACKEND \
+&& importdatabnf $DUMPSDIR \
+&& cleandatabnfdumps $DUMPSDIR \
+&& stopdatabnfbackend $BACKEND

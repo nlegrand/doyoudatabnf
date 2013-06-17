@@ -1,0 +1,82 @@
+#!/bin/sh
+
+cleandatabnfdumps() {
+    DUMPSDIR=$1 || return $$
+    echo "Cleaning dumps"
+    rm -rf $DUMPSDIR
+}
+
+mkdirdatabnfdumps() {
+    DUMPSDIR=$1 || return $$
+    echo "Creating dumps dir"
+    mkdir $DUMPSDIR
+}
+
+getdatabnf() {
+    DUMPSDIR=$1 || return $$
+    SETS="${2} ${3}" || return $$
+
+    cd $DUMPSDIR || return $$
+
+
+    for SET in $SETS
+    do
+	
+	echo "Downloading DataBnF set: ${SET}"
+	wget \
+	    "http://echanges.bnf.fr/PIVOT/${SET}?user=databnf&password=databnf" \
+	    -O ${SET} \
+	    || return $$
+    done
+
+    cd ..
+}
+
+extractdatabnf() {
+    DUMPSDIR=$1 || return $$
+    SETS=$2 || return $$
+   
+    cd $DUMPSDIR || return $$
+    echo "Extracting DataBnF sets"
+    for SET in SETS
+    do
+	tar xfz $SETS || return $$
+    done
+
+    cd ..
+}
+
+cleandatabnfbackend() {
+    BACKEND=$1 || return $$
+    echo "Cleaning preceding instance of database"
+    4s-backend-destroy $BACKEND
+}
+
+createdatabnfbackend() {
+    BACKEND=$1 || return $$
+    echo "Creating databnf backend"
+    4s-backend-setup $BACKEND
+}
+
+startdatabnfbackend() {
+    BACKEND=$1 || return $$
+    echo "Starting databnf backend"
+    4s-backend $BACKEND || return $$
+}
+
+stopdatabnfbackend() {
+    BACKEND=$1 || return $$
+    echo "Stop databnf backend"
+    pkill -f "^4s-backend'${BACKEND}\$"
+    return 0
+}
+
+importdatabnf() {
+    DUMPSDIR=$1 || return $$
+
+    cd $DUMPSDIR
+    echo "Importing DataBnF in 4store (may last for more than half an hour):
+"
+    4s-import databnf *.xml || return $$
+    cd ..
+}

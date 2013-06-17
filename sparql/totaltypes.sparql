@@ -1,0 +1,17 @@
+PREFIX bnf-onto: <http://data.bnf.fr/ontology/>
+PREFIX bnfroles: <http://data.bnf.fr/vocabulary/roles/>
+PREFIX dc: <http://purl.org/dc/terms/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX marcrel: <http://id.loc.gov/vocabulary/relators/>
+PREFIX rdagroup1elements: <http://RDVocab.info/Elements/>
+PREFIX rdagroup2elements: <http://RDVocab.info/ElementsGr2/>
+PREFIX rdarelationships: <http://rdvocab.info/RDARelationshipsWEMI/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+
+SELECT ?type (COUNT(?type) AS ?total) WHERE {
+       [] a ?type.
+} GROUP BY ?type
+
+#EOQ
