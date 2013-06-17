@@ -31,6 +31,10 @@ Installez Data BnF sur votre machine personnel
     cd doyoudatabnf
     ./doyoudatabnf
 
+Lancer le backend du triple store 4store:
+
+    4s-backend databnf
+
 Vous pouvez avoir à attendre plus d'une demi-heure pour que l'import
 se fasse. Une fois terminé, vous pouvez le tester :
 

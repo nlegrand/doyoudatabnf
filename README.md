@@ -27,6 +27,10 @@ Install Data BnF on your laptop
     cd doyoudatabnf
     ./doyoudatabnf
 
+Launch the 4store triple store backend:
+
+    4s-backend databnf
+
 You may have to wait for something like half an hour for the process
 to complete. Once finished, you can test it:
 

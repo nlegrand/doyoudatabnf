@@ -81,7 +81,7 @@ startdatabnfbackend() {
 stopdatabnfbackend() {
     BACKEND=$1 || return $$
     echo "Stop databnf backend"
-    pkill -f "^4s-backend'${BACKEND}\$"
+    pkill -f "^4s-backend ${BACKEND}\$"
     return 0
 }
 
