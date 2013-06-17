@@ -1,9 +1,10 @@
-`doyoudatabnf` vous aide à télécharger les dumps RDF de [Data
-BnF](http://data.bnf.fr/) pour les importer dans votre triple store et
-serveur SPARQL personnel. Nous utilisons ici le logiciel
-[4store](http://4store.org/). Data BnF est un échantillon du catalogue
-de la Bibliothèque nationale de France, en RDF. Ce sont des données de
-[très belle qualité](http://data.bnf.fr/semanticweb).
+`doyoudatabnf` vous aide à télécharger les dumps RDF de
+[data.bnf.fr](http://data.bnf.fr/) pour les importer dans votre triple
+store et serveur SPARQL personnel. Nous utilisons ici le logiciel
+[4store](http://4store.org/). Ce jeu de fichiers RDF est un
+échantillon du catalogue de la Bibliothèque nationale de France. Ce
+sont des données d'OpenData de [très belle
+qualité](http://data.bnf.fr/semanticweb).
 
 Prérequis
 =========
@@ -24,8 +25,8 @@ utilisateurs d'y accéder (de la même manière que tout le monde accède
     sudo mkdir /var/lib/4store
     sudo chmod 1777 /var/lib/4store
 
-Installez Data BnF sur votre machine personnel
-==============================================
+Installez les fichiers RDF de data.bnf.fr sur votre machine personnelle
+=======================================================================
 
     git clone git://github.com/nlegrand/doyoudatabnf.git
     cd doyoudatabnf

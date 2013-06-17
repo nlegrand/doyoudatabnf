@@ -1,8 +1,8 @@
-`doyoudatabnf` helps you download [Data BnF](http://data.bnf.fr/) RDF
-dumps and load it on a personnal [4store](http://4store.org/) triple
-store and SPARQL server. Data BnF is a sample of French national
-library catalog in RDF. It's [high quality
-data](http://data.bnf.fr/semanticweb) [fr].
+`doyoudatabnf` helps you download [data.bnf.fr](http://data.bnf.fr/)
+RDF dumps and load it on a personnal [4store](http://4store.org/)
+triple store and SPARQL server. This set of RDF files is a sample of
+French national library catalog in RDF. It's [high quality Open
+Data](http://data.bnf.fr/semanticweb) [fr].
 
 Prerequesite
 ============
@@ -20,8 +20,8 @@ letting all users access it (same way you can access the `/tmp` dir):
     sudo mkdir /var/lib/4store
     sudo chmod 1777 /var/lib/4store
 
-Install Data BnF on your laptop
-===============================
+Import data.bnf.fr RDF files on your desktop
+============================================
 
     git clone git://github.com/nlegrand/doyoudatabnf.git
     cd doyoudatabnf
