@@ -28,7 +28,8 @@ mkdirdatabnfdumps() {
 
 getdatabnf() {
     local DUMPSDIR=$1 || return 1
-    local SETS="${2} ${3}" || return 1
+    shift
+    local SETS="$*" || return 1
 
     cd $DUMPSDIR || return 1
 
@@ -48,13 +49,14 @@ getdatabnf() {
 
 extractdatabnf() {
     local DUMPSDIR=$1 || return 1
-    SETS=$2 || return 1
+    shift
+    SETS="$*" || return 1
    
     cd $DUMPSDIR || return 1
     echo "Extracting DataBnF sets"
-    for SET in SETS
+    for SET in $SETS
     do
-	tar xfz $SETS || return 1
+	tar xfz $SET || return 1
     done
 
     cd ..
