@@ -16,8 +16,8 @@
 
 . doyoudatabnf.subr
 
-DUMPSDIR="databnf-2012-11-15"
-SETS="databnf_all_rdf_xml_2012-11-15.tar.gz databnf_externalrefs_xml_2012-11-15.tar.gz"
+DUMPSDIR="databnf-2013-09-25"
+SETS="databnf_all_rdf_xml_2013_09_25.tar.gz"
 BACKEND="databnf"
 
 cleandatabnfdumps $DUMPSDIR \
